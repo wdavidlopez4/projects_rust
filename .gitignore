@@ -1,0 +1,23 @@
+# Archivos y carpetas generados por Cargo
+/target/
+**/*.rs.bk
+
+# Archivos de configuración del entorno
+Cargo.lock
+
+# Archivos de compilación de depuración
+*.log
+*.rlib
+
+# Archivos de IDEs y editores
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+
+# exec del primer programa hola mundo
+1_hello_world_rustup/main
