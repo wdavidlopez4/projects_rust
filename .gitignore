@@ -1,13 +1,11 @@
-# Archivos y carpetas generados por Cargo
-/target/
-**/*.rs.bk
+# Ignorar directorios de compilación de todos los proyectos
+**/target/
 
-# Archivos de configuración del entorno
-Cargo.lock
+# Ignorar configuraciones específicas de Cargo
+**/.cargo/
 
-# Archivos de compilación de depuración
-*.log
-*.rlib
+# Ignorar lock files de proyectos de bibliotecas
+**/Cargo.lock
 
 # Archivos de IDEs y editores
 .idea/
@@ -15,9 +13,20 @@ Cargo.lock
 *.sublime-workspace
 *.sublime-project
 
-# Archivos del sistema operativo
-.DS_Store
-Thumbs.db
+# Otros archivos temporales
+**/.DS_Store
+**/Thumbs.db
+**/*.tmp
 
 # exec del primer programa hola mundo
 1_hello_world_rustup/main
+
+# Ignorar archivos temporales de editores
+**/*.rs.bk
+*.swp
+*.swo
+**/.vscode/
+**/.idea/
+
+# Ignorar archivos de pruebas
+**/*.profraw
