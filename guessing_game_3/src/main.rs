@@ -1,9 +1,8 @@
 extern crate rand;
 
 use std::io;
-
-//trait
-use rand::Rng;
+use rand::Rng; //trait
+use std::cmp::Ordering; //enumerador
 
 fn main() {
     println!("!Adivina el numero¡");
@@ -19,6 +18,19 @@ fn main() {
 
     io::stdin().read_line(&mut guess)
         .expect("fallo al leer la linea");
+
+    let guess: u32 = guess
+        .trim()
+        .parse()
+        .expect("escriba un numero");
+
+    let comparison_result = guess.cmp(&secret_number); //comparamos quess y el secret_number
+
+    match comparison_result {
+        Ordering::Less => println!("numero pequeño"),
+        Ordering::Greater => println!("numero grande"),
+        Ordering::Equal => println!("numero igual")
+    };
 
     println!("Tu numero: {}", guess);
 }
