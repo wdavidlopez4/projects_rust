@@ -11,6 +11,11 @@ fn main() {
     let a = 4;
     println!("variable inmutable: {}", a);
 
+    //otro ejemplo de variable mutable (siempre va a ser mutable)
+    let mut h = 2;
+    h = h +1;
+    println!("otro ejemplo de variable mutable :{}", h ); 
+
     //constante
     const MAX_PAINTS: u32 = 100_000;
     println!("constante: {}", MAX_PAINTS);
@@ -24,7 +29,7 @@ fn main() {
 
     println!("la variable sombreada es: {} ", j);
 
-    //variable sombreada (puede cambiar de tipo y reutilizar el mismo nombre)
+    //variable sombreada (puede cambiar de tipo y reutilizar el mismo nombre) (siempre va a ser inmutable)
     let spaces = "   ";
     let spaces = spaces.len();
     println!("variable sombreada que cambia de tipo de valor: {}", spaces);
