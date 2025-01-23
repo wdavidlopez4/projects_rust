@@ -15,7 +15,7 @@ fn main() {
     const MAX_PAINTS: u32 = 100_000;
     println!("constante: {}", MAX_PAINTS);
 
-    //variable sombreada (cambia el valor a una variable mutable, pero sigue siendo mutable)
+    //variable sombreada (cambia el valor a una variable inmutable, pero sigue siendo mutable)
     let j = 5;
     println!("primer valor de variable sombreada {}", j);
 
