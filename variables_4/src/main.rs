@@ -1,5 +1,9 @@
 fn main() {
 
+    /*
+    valores primitivos
+    */
+
     //variable mutable
     let mut x = 5;
     println!("variable mutable: {}", x);
@@ -56,5 +60,26 @@ fn main() {
     let variable_true: bool = true;
 
     println!("variable bolena: {}, notacion explixita: {}", variable_boleana, variable_true);
+
+    //ejemplo variable caracter
+    let c = 'Z'; //en comillas simples
+    println!("caracter: {}", c);
+
+    /*
+    valores compuestos
+    */
+
+
+    //ejemplo tupla
+    let tupla: (i32, f64, u8) = (500, 6.3, 1); //su tamaño es fijo
+    let (x, y, z) = tupla; //des-estructurar
+
+    println!("tupla: {} {} {}", x, y, z);
+
+    //otra forma de escribir una tupla
+    let otra_tupla = (4, 3, 1.1);
+    let value_final = otra_tupla.2;
+
+    println!("otra tupla: {}", value_final);
 
 }
