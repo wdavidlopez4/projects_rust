@@ -38,48 +38,4 @@ fn main() {
     let spaces = spaces.len();
     println!("variable sombreada que cambia de tipo de valor: {}", spaces);
 
-
-    //ejemplo variable entera
-    let con_signo : u32 = 12121;
-    let sin_signo : i32 =  -112;
-
-    println!("con signo: {}, sin signo: {}", con_signo, sin_signo);
-
-    //ejemplo variable decimal
-    let coma_flotante : f32 = 32.122;
-    println!("coma flotante: {}", coma_flotante);
-
-    //ejemplo de operacion aritmetica
-    let resto = 43 % 5;
-    let divicion = 43 /5;
-
-    println!("divicion: {}, resto: {}", divicion, resto);
-
-    //ejemplo variable boleana
-    let variable_boleana = true;
-    let variable_true: bool = true;
-
-    println!("variable bolena: {}, notacion explixita: {}", variable_boleana, variable_true);
-
-    //ejemplo variable caracter
-    let c = 'Z'; //en comillas simples
-    println!("caracter: {}", c);
-
-    /*
-    valores compuestos
-    */
-
-
-    //ejemplo tupla
-    let tupla: (i32, f64, u8) = (500, 6.3, 1); //su tamaño es fijo
-    let (x, y, z) = tupla; //des-estructurar
-
-    println!("tupla: {} {} {}", x, y, z);
-
-    //otra forma de escribir una tupla
-    let otra_tupla = (4, 3, 1.1);
-    let value_final = otra_tupla.2;
-
-    println!("otra tupla: {}", value_final);
-
 }
