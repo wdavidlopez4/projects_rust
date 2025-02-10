@@ -38,6 +38,14 @@ fn main() {
 
     println!("valor de expresion: {}", a);
 
+    //funciones que retornan 
+    let value_return = function_return();
+    println!("valor de retorno {}", value_return);
+
+    //otro ejemplo de retorno con parametros
+    let value_return =  function_return_params(5);
+    println!("valor de retorno, con parametros la funcion: {}", value_return);
+
 }
 
 fn another_function(){
@@ -50,4 +58,12 @@ fn another_function_param(x: i32){
 
 fn another_function_params(x: i32, y: i32){
     println!("funcion con varios parametros: {}, {}", x, y);
+}
+
+fn function_return() -> i32 {
+    5
+}
+
+fn function_return_params(x: i32) -> i32{
+    x +1
 }
