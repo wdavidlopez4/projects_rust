@@ -1,3 +1,9 @@
+/*
+    en este caso se estara manejando 
+    str que es un slice de cadena y es inmutable
+    String que es una cadena mutable
+ */
+
 fn main() {
 
     /*
@@ -70,6 +76,33 @@ fn main() {
     println!("the first word is {}", j_word);
     j.clear(); //como ya no hay mas referencias entonces se puede limpiar
 
+
+    /*
+    otros ejemplo de slice
+     */
+
+    //este es inmutable, realmente es &str
+    let s = "hola mundo";  
+    println!("{}", s);
+
+    //ejemplo de pasar un slice
+    let z_string = String::from("hola mundo");
+    let z_word = first_word_slice_str(&z_string[..]); //se le esta pasando un slice
+    println!("{}", z_word);
+
+    //otro ejemplo pasar un slice
+    let k_str = "hola mundo"; //recuerde que esto es una referencia de slice
+    let k_work = first_word_slice_str(&k_str);
+    println!("{}", k_work);
+
+
+    /*
+    otro tipo de slice... continuara
+     */
+
+    let j_a = [1, 2, 3, 4, 5];
+    let j_slice  = &j_a[1..3];
+
 }
 
 fn first_word(s: &String) -> usize {
@@ -84,7 +117,7 @@ fn first_word(s: &String) -> usize {
     return s.len();
 }
 
-fn first_word_slice(s: &String) -> & str {
+fn first_word_slice(s: &String) -> &str {
     let bytes = s.as_bytes();
 
     for (i, &item) in bytes.iter().enumerate(){
@@ -94,4 +127,16 @@ fn first_word_slice(s: &String) -> & str {
     } 
 
     &s[..] //retorna toda la palabra
+}
+
+fn first_word_slice_str(s: &str) -> &str{
+    let bytes = s.as_bytes();
+
+    for (i, &item) in bytes.iter().enumerate(){
+        if item == b' '{
+            return &s[0..i];
+        }
+    }
+
+    &s[..]
 }
