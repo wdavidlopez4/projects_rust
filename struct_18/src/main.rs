@@ -75,4 +75,25 @@ fn main() {
 
     println!("{}", user8.email);
 
+
+     /*
+    ejemplo incompleto: 
+    estructuras con referencias 
+    para ello utilizamos lifetimes pero eso lo veremos en otro ejercicio
+     */
+
+     struct UserReference{
+        //name: &str,        error falta lifetime
+        //last_name: &str,
+        active: bool,
+    };
+
+    let user = UserReference{
+        //name: "william",
+        //last_name: "lopez",
+        active : true
+    };
+
+    println!("{}", user.active);
+
 }
