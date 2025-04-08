@@ -26,6 +26,13 @@ fn main() {
 
     //des-estructurar
     let Color(a, b, c) = black;
-    println!("back des-estructurar: {} {} {}", a, b, c)
+    println!("back des-estructurar: {} {} {}", a, b, c);
 
+
+    /*
+    ejemplo de tuple struct unit-like (sin nungun campo)
+     */
+
+    struct Unit();
+    let u : Unit;
 }
