@@ -3,6 +3,12 @@ struct Rectangle{
     height: u32
 }
 
+#[derive(Debug)] //permite debuggerar la estructura por lo tanto permite imprimirla por consola 
+struct RectangleDev {
+    width: u32,
+    height: u32
+}
+
 fn main() {
 
     /*
@@ -39,6 +45,19 @@ fn main() {
     };
 
     println!("el area es {} en pixeles con estructura", area_struct(&rect2));
+
+    /*
+        ejemplo de como imprimir una estructura
+        el {:?} ayuda a formatear la estructura para poderla imprimir
+        el {:#?} otra forma de formatear estructuras para poderlas imprimir
+    */
+
+    let r2 = RectangleDev{
+        width: 5,
+        height: 4
+    };
+
+    println!("restangulo es: {:#?}", r2);
 
 
 }
