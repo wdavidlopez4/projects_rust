@@ -9,6 +9,10 @@ impl Rectangle{
     fn area(&self) -> u32{
         self.width * self.height
     }
+
+    fn can_hold(&self, other: &Rectangle) -> bool {
+        self.width > other.width && self.height > other.height
+    }
 }
 
 fn main() {
@@ -28,4 +32,24 @@ fn main() {
     let value_area: u32 = rect1.area();
 
     println!("el area es {}", value_area);
+
+
+    /*
+    utilizar un metodo para mirar si un rectangulo encaja en otro
+     */
+
+    let rec_a = Rectangle{
+        width: 5,
+        height: 5
+    };
+
+    let rec_b = Rectangle{
+        width: 2,
+        height: 4
+    };
+
+    let is_can_hold = rec_a.can_hold(&rec_b);
+    
+    println!("{}", is_can_hold);
+
 }
