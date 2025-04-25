@@ -6,12 +6,19 @@ struct Rectangle {
 }
 
 impl Rectangle{
+    //metodo
     fn area(&self) -> u32{
         self.width * self.height
     }
 
+    //metodo
     fn can_hold(&self, other: &Rectangle) -> bool {
         self.width > other.width && self.height > other.height
+    }
+
+    //funcion asociada (se llama asi por que no utiliza el struct)
+    fn square(size: u32) -> Rectangle {
+        Rectangle { width: size, height: size }
     }
 }
 
@@ -51,5 +58,13 @@ fn main() {
     let is_can_hold = rec_a.can_hold(&rec_b);
     
     println!("{}", is_can_hold);
+
+    /*
+    utilizando una funcion asociada
+    (se llama asi por que no utiliza el struct)
+     */
+
+    let sq = Rectangle::square(12);
+    println!("este es un cuadrado: h: {}, w: {}", sq.height, sq.width);
 
 }
