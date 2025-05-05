@@ -4,7 +4,9 @@ fn main() {
 
     let absent_number:Option<i32> = None;
 
-    println!("number: {:?}, str: {:?}, none: {:?} ", 
-        some_number, some_string, absent_number);
+    let is_some_number = some_number.is_some();
+    let value_number = some_number.unwrap();
 
+    println!("number: {:?}, str: {:?}, none: {:?}, is some number: {}, value number {}", 
+        some_number, some_string, absent_number, is_some_number, value_number);
 }
