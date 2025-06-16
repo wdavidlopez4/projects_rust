@@ -1,0 +1,6 @@
+[package]
+name = "module_struct_enum_40"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
