@@ -20,4 +20,14 @@ fn main() {
     v.push(8);
 
     println!("{:?}", v);
+
+
+    // Accediendo a los elementos del vector
+    let v = vec![1, 2, 3, 4, 5];
+    println!("El primer elemento es: {}", v[0]);
+
+    match v.get(2) {
+        Some(value) => println!("El tercer elemento es: {}", value),
+        None => println!("No hay un tercer elemento."),
+    }
 }
