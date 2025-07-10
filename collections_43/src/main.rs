@@ -62,4 +62,23 @@ fn main() {
     ];
 
     println!("Fila: {:?}", row[0]);
+
+
+
+    /*
+    cadenas de caracteres o Strings
+     */
+    // Declaración de una cadena de caracteres vacía
+    let cadena : String = String::new();
+    println!("{:?}", cadena);
+
+    // Declaración de una cadena de caracteres con valores iniciales
+    let data: &str = "Hola, mundo!";
+    let cadena: String = data.to_string();
+    println!("{:?}", cadena);
+
+    // otra forma de declarar una cadena de caracteres
+    let cadena = String::from("!Hola, mundo!");
+    println!("{:?}", cadena);
+    
 }
