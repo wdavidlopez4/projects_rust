@@ -80,5 +80,26 @@ fn main() {
     // otra forma de declarar una cadena de caracteres
     let cadena = String::from("!Hola, mundo!");
     println!("{:?}", cadena);
-    
+
+    //añadiendo caracteres a la cadena
+    let mut s = String::from("Hola");
+    let s2 = "mundo";
+    s.push_str(s2); // se puede añadir una cadena completa
+
+
+    s.push('!'); // solo se puede añadir un caracter a la vez
+    println!("{}", s);
+
+    //concatenando cadenas
+    let s1 = String::from("Hola");
+    let s2 = String::from(" mundo");
+    let s3 = s1 + &s2; // s1 ya no es válido después de esta operación
+    println!("{}", s3);
+
+
+    //forma sensilla de concatenar cadenas
+    let s1 = String::from("Hola");
+    let s2 = String::from(" mundo");
+    let s3 = format!("{}{}", s1, s2);
+    println!("{}", s3);
 }
