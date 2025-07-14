@@ -102,4 +102,16 @@ fn main() {
     let s2 = String::from(" mundo");
     let s3 = format!("{}{}", s1, s2);
     println!("{}", s3);
+
+    //iterar sobre una cadena
+    println!("Iterando sobre la cadena:");
+    let cadena = String::from("Hola, mundo!");
+    for c in cadena.chars(){
+        println!("{}", c); // Imprime cada caracter de la cadena con metodo chars()
+    }
+
+    println!("Iterando sobre los bytes de la cadena:");
+    for c in cadena.bytes(){
+        println!("{}", c); // Imprime el valor en bytes de cada caracter
+    }
 }
