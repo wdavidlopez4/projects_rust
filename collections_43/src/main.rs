@@ -136,4 +136,21 @@ fn main() {
     println!("{:?}", map);
     // field_name y field_value ya no son válidos aquí, porque sus valores fueron movidos al HashMap
 
+
+    // Accediendo a los valores de un HashMap
+    let mut scores = HashMap::new();
+    scores.insert(String::from("Blue"), 10);
+    scores.insert(String::from("Yellow"), 50);
+
+    let team_name = String::from("Blue");
+    match scores.get(&team_name){
+        Some(score) => println!("{} tiene un puntaje de {}", team_name, score),
+        None => println!("No se encontró el equipo {}", team_name),
+    }
+
+    // Iterando sobre un HashMap
+    println!("Iterando sobre el HashMap:");
+    for (key, value) in &scores{
+        println!("El equipo {} tiene un puntaje de {}", key, value);
+    }
 }
