@@ -126,4 +126,14 @@ fn main() {
 
     println!("{:?}", scores);
 
+
+    //hash maps y ownership
+    let field_name = String::from("Favorite color");
+    let field_value = String::from("Blue");
+    let mut map = HashMap::new();
+
+    map.insert(field_name, field_value);
+    println!("{:?}", map);
+    // field_name y field_value ya no son válidos aquí, porque sus valores fueron movidos al HashMap
+
 }
