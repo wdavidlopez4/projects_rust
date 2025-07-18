@@ -174,4 +174,20 @@ fn main() {
         .or_insert(50); // Se inserta "Yellow" con el valor 50
 
     println!("{:?}", scores2);
+
+
+    //ejercicio de actualizar un valor, de acuerdo al valor antiguo
+    let text = "hello world wonderful world";
+    let mut scores4 = HashMap::new();
+
+    for word in text.split_whitespace(){
+        let count = scores4
+            .entry(word)
+            .or_insert(0); // Si la palabra no existe, se inserta con valor 0, siempre devuelve una referencia mutable al valor asociado a la clave
+        
+        *count +=1; // Incrementa el contador de la palabra
+    }
+
+    println!("{:?}", scores4);
+
 }
