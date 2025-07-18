@@ -153,4 +153,25 @@ fn main() {
     for (key, value) in &scores{
         println!("El equipo {} tiene un puntaje de {}", key, value);
     }
+
+    //sobreescribir valores en un HashMap
+    let mut scores1 = HashMap::new();
+    scores1.insert(String::from("Blue"), 10);
+    scores1.insert(String::from("Blue"), 2);
+
+    println!("{:?}", scores1); // El valor del equipo "Blue" se actualiza a 2
+
+    // Insertar un valor solo si la clave no tiene valor asociado
+    let mut scores2 = HashMap::new();
+    scores2.insert(String::from("Blue"), 10);
+
+    scores2
+        .entry(String::from("Blue"))
+        .or_insert(50); // No se actualiza, ya que "Blue" ya tiene un valor asociado
+
+    scores2
+        .entry(String::from("Yellow"))
+        .or_insert(50); // Se inserta "Yellow" con el valor 50
+
+    println!("{:?}", scores2);
 }
