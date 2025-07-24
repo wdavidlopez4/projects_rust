@@ -22,14 +22,40 @@ impl Statistic{
     fn get_average(&mut self) -> f32{
         self.average
     }
+
+    fn bubble_sort(lis_number: & mut Vec<i32>) -> &Vec<i32>{
+        let len = lis_number.len();
+
+        for i in 0..len -1 { //para recorrer a todos los numeros recordar que va hasta el indice -1
+            let mut swapped = false;
+            
+            for j in 0..len - 1 - i{ //para comparar un numero con todos (menos el indice) (menos el valor del 1 ciclo, 2 ciclo...)
+                
+                if lis_number[j] > lis_number[j + 1] { //hacemos el intercambio
+                    
+                    (lis_number[j], lis_number[j + 1]) = (lis_number[j +1], lis_number[j]);
+                    swapped = true;
+
+                }
+            }
+
+            if ! swapped { break }
+        }
+
+        lis_number
+    }
 }
 
 fn main() {
-    let list_number: Vec<i32> = vec![1, 3 , 4, 5, 2, 1, 9, 1, 1];
+    let mut list_number: Vec<i32> = vec![8, 3, 4, 5, 2, 11, 9, 12, 1];
 
     let mut statistic = Statistic::new();
     statistic.set_average(&list_number);
 
-    println!("este es el promedio: {}", statistic.get_average())
+    println!("este es el promedio: {}", statistic.get_average());
+
+    let a = Statistic::bubble_sort(& mut list_number);
+
+    println!("prueba ordenada {:?}", a);
 
 }
