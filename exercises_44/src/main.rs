@@ -1,11 +1,12 @@
 
 struct Statistic{
-    average : f32
+    average : f32, //promedio
+    median: f32 //media
 }
 
 impl Statistic{
     fn new() -> Self{
-        Statistic{ average: 0.0}
+        Statistic{ average: 0.0, median: 0.0}
     }
 
     fn set_average(&mut self, list_number: &Vec<i32>){
@@ -44,18 +45,55 @@ impl Statistic{
 
         lis_number
     }
+
+    fn set_median(&mut self, ordered_list_number: &Vec<i32>){
+        let count = ordered_list_number.len();
+        println!("count: {}", count);
+        if count % 2 == 0 {
+            let posicion = (count - 1) / 2;
+
+            let p2 = ordered_list_number[posicion] as f32;
+            let p1 = ordered_list_number[posicion + 1] as f32;
+            
+            self.median = (p1 + p2) / 2 as f32;
+        }
+        else{
+            println!("entro impar");
+            let posicion = (count) / 2;
+            self.median = ordered_list_number[posicion] as f32;
+        };
+    }
+
+    fn get_median(&mut self) -> f32{
+        self.median
+    }
 }
 
 fn main() {
+    /*
+    crear los datos
+     */
     let mut list_number: Vec<i32> = vec![8, 3, 4, 5, 2, 11, 9, 12, 1];
 
     let mut statistic = Statistic::new();
+
+    /*
+    calcular promedio
+     */
+    
     statistic.set_average(&list_number);
 
     println!("este es el promedio: {}", statistic.get_average());
 
-    let a = Statistic::bubble_sort(& mut list_number);
+    /*
+    ordenar datos y calcular mediana
+     */
 
-    println!("prueba ordenada {:?}", a);
+    let ordered_list_number = 
+        Statistic::bubble_sort(& mut list_number);
+
+    statistic.set_median(ordered_list_number);
+
+    println!("datos: ordenada {:?}, mediana: {}", ordered_list_number, statistic.get_median());
 
 }
