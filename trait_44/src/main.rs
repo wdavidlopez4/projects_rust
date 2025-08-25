@@ -32,6 +32,11 @@ impl NewArtice { //impl sin trait sus propios metodos
         let sumarize = item.summarize();
         format!("execute sumarize : {} ", sumarize)
     }
+
+    pub fn some_function<T>(item : T) -> String where T : Summary{ //limitando con where
+        let sumarize = item.summarize();
+        format!("execute some sumarize : {} ", sumarize)
+    }
 }
 
 impl Summary for NewArtice { //impl implementando trait
